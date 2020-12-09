@@ -13,7 +13,7 @@
     viewModelBase:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
     <Grid
-        Margin="0,0,0,80"
+        Margin="0,0,0,60"
         Padding="0,0"
         BackgroundColor="{StaticResource WhiteColor}"
         RowSpacing="0">
@@ -52,7 +52,7 @@
                             VerticalOptions="End">
                             <Label
                                 BackgroundColor="Transparent"
-                                FontSize="Large"
+                                FontSize="Medium"
                                 HorizontalOptions="EndAndExpand"
                                 HorizontalTextAlignment="Start"
                                 Style="{StaticResource Label_WhiteRegular}"
@@ -127,20 +127,20 @@
                                     Margin="10,0,0,0"
                                     Orientation="Vertical">
                                     <Label
-                                        FontSize="Large"
+                                        FontSize="Small"
                                         HorizontalOptions="StartAndExpand"
                                         LineBreakMode="TailTruncation"
                                         Style="{StaticResource Label_WhiteRegular}"
                                         Text="Find the recipes" />
                                     <Label
-                                        FontSize="Large"
+                                        FontSize="Small"
                                         HorizontalOptions="StartAndExpand"
                                         LineBreakMode="TailTruncation"
                                         Style="{StaticResource Label_WhiteRegular}"
                                         Text="based on what" />
                                     <Label
                                         FontAttributes="Bold"
-                                        FontSize="Large"
+                                        FontSize="Small"
                                         HorizontalOptions="StartAndExpand"
                                         LineBreakMode="TailTruncation"
                                         Style="{StaticResource Label_WhiteRegular}"
@@ -204,7 +204,9 @@
                             VerticalOptions="Start">
                             <Label
                                 FontAttributes="Bold"
+                                FontSize="Small"
                                 HorizontalOptions="CenterAndExpand"
+                                LineBreakMode="TailTruncation"
                                 Style="{StaticResource Label_FSize20_TabsCurrentRegular}"
                                 Text="All Recipes"
                                 VerticalOptions="Center" />
@@ -299,7 +301,9 @@
                             VerticalOptions="Start">
                             <Label
                                 FontAttributes="Bold"
+                                FontSize="Small"
                                 HorizontalOptions="CenterAndExpand"
+                                LineBreakMode="TailTruncation"
                                 Style="{StaticResource Label_FSize20_TabsCurrentRegular}"
                                 Text="Meal Planner"
                                 VerticalOptions="Center" />
@@ -323,7 +327,10 @@
                             <al:RepeatableStack.ItemTemplate>
                                 <DataTemplate>
 
-                                    <Grid Margin="5,10" RowDefinitions="Auto,Auto,Auto">
+                                    <Grid
+                                        Margin="5,10,5,0"
+                                        Padding="0"
+                                        RowDefinitions="Auto,Auto,Auto">
                                         <Label
                                             HorizontalOptions="Center"
                                             Style="{StaticResource Label_BlackRegular}"
@@ -371,7 +378,7 @@
                 <!--  Suggested content section  -->
                 <Grid
                     Grid.Row="7"
-                    Margin="10,10,0,10"
+                    Margin="10,10,5,10"
                     RowDefinitions="Auto,Auto"
                     RowSpacing="0">
                     <Grid ColumnDefinitions="Auto,*">
@@ -392,7 +399,9 @@
                             VerticalOptions="Start">
                             <Label
                                 FontAttributes="Bold"
+                                FontSize="Small"
                                 HorizontalOptions="CenterAndExpand"
+                                LineBreakMode="TailTruncation"
                                 Style="{StaticResource Label_FSize20_TabsCurrentRegular}"
                                 Text="View all"
                                 VerticalOptions="Center" />
