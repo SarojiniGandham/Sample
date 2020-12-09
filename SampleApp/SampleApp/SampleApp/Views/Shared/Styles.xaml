@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="SampleApp.Views.Shared.Styles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:resources="clr-namespace:SampleApp.Views.Shared"
+    xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
+    mc:Ignorable="d">
+    <ResourceDictionary.MergedDictionaries>
+        <resources:Colors />
+        <resources:FontSizes />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="Label_FSize16_BlackRegular" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+        <Setter Property="FontSize" Value="{StaticResource Font16_Size}" />
+        <Setter Property="FontFamily" Value="RegularFont" />
+    </Style>
+    <Style x:Key="Label_BlackRegular" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+        <Setter Property="FontFamily" Value="RegularFont" />
+    </Style>
+    <Style x:Key="Label_FSize20_TabsCurrentRegular" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource TabsCurrentColor}" />
+        <Setter Property="FontSize" Value="{StaticResource Font20_Size}" />
+        <Setter Property="FontFamily" Value="RegularFont" />
+    </Style>
+    <Style x:Key="Label_FSize20_BlackRegular" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+        <Setter Property="FontSize" Value="{StaticResource Font20_Size}" />
+        <Setter Property="FontFamily" Value="RegularFont" />
+    </Style>
+    <Style x:Key="Label_WhiteRegular" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+        <Setter Property="FontFamily" Value="RegularFont" />
+    </Style>
+    <Style
+        x:Key="FrameShadowDarkGrayColor"
+        ApplyToDerivedTypes="True"
+        TargetType="sh:Shadows">
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="Shades">
+            <sh:ImmutableShades>
+                <sh:Shade
+                    BlurRadius="4"
+                    Opacity="0.2"
+                    Offset="0,3"
+                    Color="{StaticResource DarkGrayColor}" />
+            </sh:ImmutableShades>
+        </Setter>
+    </Style>
+</ResourceDictionary>

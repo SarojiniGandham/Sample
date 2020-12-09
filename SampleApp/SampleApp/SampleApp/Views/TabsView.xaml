@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SharedViews:BaseView
+    x:Class="SampleApp.Views.TabsView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Converters="clr-namespace:SampleApp.Converters"
+    xmlns:SharedViews="clr-namespace:SampleApp.Views.Shared"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModelBase="clr-namespace:SampleApp.ViewModels.Shared"
+    viewModelBase:ViewModelLocator.AutoWireViewModel="True"
+    BackgroundColor="White"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid
+            Margin="0,0"
+            Padding="0,0"
+            ColumnSpacing="0"
+            RowSpacing="0">
+            <Grid.Resources>
+                <Converters:TabBackgroundFrameColorConverter x:Key="tabBackgroundFrameColorConverter" />
+                <Converters:TabTextColorConverter x:Key="tabTextColorConverter" />
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ContentView
+                x:Name="PlaceHolder"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                BackgroundColor="Transparent"
+                Content="{Binding PageContent}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+            <Grid
+                Grid.Row="1"
+                Margin="0,0,0,0"
+                Padding="0,0,0,0"
+                BackgroundColor="White"
+                HeightRequest="60"
+                RowSpacing="0"
+                VerticalOptions="EndAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="0,10,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    Spacing="0">
+                    <Image
+                        Margin="0,0"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="{Binding PlansIcon}"
+                        WidthRequest="25" />
+                    <Label
+                        FontAttributes="Bold"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Style="{StaticResource Label_FSize16_BlackRegular}"
+                        Text="Plan"
+                        TextColor="{Binding CurrentActiveTab, Converter={StaticResource tabTextColorConverter}, ConverterParameter=2}"
+                        VerticalOptions="CenterAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DisplayCommand}" CommandParameter="Plans_Img" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Padding="0,10,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    Spacing="0">
+                    <Image
+                        Margin="0,0"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="{Binding CookNowIcon}"
+                        WidthRequest="25" />
+                    <Label
+                        FontAttributes="Bold"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Style="{StaticResource Label_FSize16_BlackRegular}"
+                        Text="Cook Now"
+                        TextColor="{Binding CurrentActiveTab, Converter={StaticResource tabTextColorConverter}, ConverterParameter=1}"
+                        VerticalOptions="CenterAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DisplayCommand}" CommandParameter="CookNow_Img" />
+                    </StackLayout.GestureRecognizers>
+
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Padding="0,10,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    Spacing="0"
+                    VerticalOptions="StartAndExpand">
+                    <Image
+                        Margin="0,0"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="{Binding HomeIcon}"
+                        WidthRequest="25" />
+                    <Label
+                        FontAttributes="Bold"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Style="{StaticResource Label_FSize16_BlackRegular}"
+                        Text="Home"
+                        TextColor="{Binding CurrentActiveTab, Converter={StaticResource tabTextColorConverter}, ConverterParameter=0}"
+                        VerticalOptions="CenterAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DisplayCommand}" CommandParameter="Home_Img" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    Padding="0,10,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    Spacing="0">
+                    <Image
+                        Margin="0,0"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="{Binding LearnIcon}"
+                        VerticalOptions="Center"
+                        WidthRequest="25" />
+                    <Label
+                        FontAttributes="Bold"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Style="{StaticResource Label_FSize16_BlackRegular}"
+                        Text="Learn"
+                        TextColor="{Binding CurrentActiveTab, Converter={StaticResource tabTextColorConverter}, ConverterParameter=3}"
+                        VerticalOptions="CenterAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DisplayCommand}" CommandParameter="Learn_Img" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="4"
+                    Padding="0,10,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical"
+                    Spacing="0">
+                    <Image
+                        Margin="0,0"
+                        Aspect="AspectFit"
+                        HeightRequest="25"
+                        Source="{Binding ShopIcon}"
+                        VerticalOptions="Center"
+                        WidthRequest="25" />
+                    <Label
+                        FontAttributes="Bold"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Style="{StaticResource Label_FSize16_BlackRegular}"
+                        Text="Shop"
+                        TextColor="{Binding CurrentActiveTab, Converter={StaticResource tabTextColorConverter}, ConverterParameter=4}"
+                        VerticalOptions="CenterAndExpand" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DisplayCommand}" CommandParameter="Shop_Img" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</SharedViews:BaseView>

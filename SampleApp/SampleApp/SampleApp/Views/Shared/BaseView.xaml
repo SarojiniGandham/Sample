@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SampleApp.Views.Shared.BaseView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    ControlTemplate="{StaticResource SampleAppTemplate}"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--  Control Template  -->
+            <ControlTemplate x:Key="SampleAppTemplate">
+                <Grid>
+                    <Grid
+                        ColumnSpacing="0"
+                        HorizontalOptions="FillAndExpand"
+                        RowDefinitions="Auto,*"
+                        RowSpacing="0"
+                        VerticalOptions="FillAndExpand">
+                        <Grid
+                            Grid.Row="0"
+                            Padding="0,10,0,0"
+                            BackgroundColor="{StaticResource WhiteColor}"
+                            ColumnDefinitions="Auto,*,Auto"
+                            HeightRequest="50"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start">
+                            <ImageButton
+                                Grid.Column="0"
+                                Margin="10,0,0,0"
+                                Padding="0,0,0,0"
+                                BackgroundColor="Transparent"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"
+                                Source="ic_notification"
+                                VerticalOptions="Center"
+                                WidthRequest="30" />
+                            <Label
+                                Grid.Column="1"
+                                Margin="0,0,0,0"
+                                FontAttributes="Bold"
+                                HorizontalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center"
+                                Style="{StaticResource Label_FSize20_TabsCurrentRegular}"
+                                Text="Kitchonomics"
+                                TextColor="{StaticResource TabsCurrentColor}"
+                                VerticalOptions="Center" />
+                            <Grid
+                                Grid.Column="2"
+                                Margin="0,0,10,0"
+                                Padding="0"
+                                HorizontalOptions="EndAndExpand"
+                                VerticalOptions="Center">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image
+                                        HeightRequest="30"
+                                        HorizontalOptions="End"
+                                        Source="ic_search"
+                                        VerticalOptions="Center"
+                                        WidthRequest="30" />
+                                    <Image
+                                        HeightRequest="30"
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="ic_user"
+                                        VerticalOptions="Center"
+                                        WidthRequest="30" />
+                                </StackLayout>
+                            </Grid>
+                        </Grid>
+                        <ContentPresenter
+                            Grid.Row="1"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand" />
+                    </Grid>
+
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+</ContentPage>

@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SampleApp.Views.HomeView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:al="clr-namespace:AiForms.Layouts;assembly=AiForms.Layouts"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:sh="http://sharpnado.com"
+    xmlns:viewModelBase="clr-namespace:SampleApp.ViewModels.Shared"
+    x:Name="homeview"
+    viewModelBase:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <Grid
+        Margin="0,0,0,80"
+        Padding="0,0"
+        BackgroundColor="{StaticResource WhiteColor}"
+        RowSpacing="0">
+        <ScrollView Padding="0,0,0,0" VerticalOptions="StartAndExpand">
+            <Grid
+                Padding="0,0"
+                HorizontalOptions="FillAndExpand"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                VerticalOptions="StartAndExpand">
+                <!--  Recipe of the day Frame  -->
+                <pancake:PancakeView
+                    Padding="0,0"
+                    CornerRadius="0,0,10,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Grid HeightRequest="170" RowDefinitions="*">
+                        <Image
+                            Aspect="AspectFill"
+                            HeightRequest="170"
+                            HorizontalOptions="FillAndExpand"
+                            Source="ic_maskgroup"
+                            VerticalOptions="FillAndExpand" />
+                        <Label
+                            Grid.Row="0"
+                            Margin="10,0,0,0"
+                            FontAttributes="Bold"
+                            HorizontalOptions="StartAndExpand"
+                            Style="{StaticResource Label_FSize20_BlackRegular}"
+                            Text="Recipe of the Day"
+                            VerticalOptions="Start" />
+                        <Grid
+                            Grid.Row="0"
+                            Padding="0,10,10,10"
+                            HorizontalOptions="EndAndExpand"
+                            RowDefinitions="Auto,Auto"
+                            VerticalOptions="End">
+                            <Label
+                                BackgroundColor="Transparent"
+                                FontSize="Large"
+                                HorizontalOptions="EndAndExpand"
+                                HorizontalTextAlignment="Start"
+                                Style="{StaticResource Label_WhiteRegular}"
+                                Text="Mixed veges Baked" />
+                            <StackLayout
+                                Grid.Row="1"
+                                HorizontalOptions="EndAndExpand"
+                                Orientation="Horizontal"
+                                Spacing="3"
+                                VerticalOptions="EndAndExpand">
+                                <Image
+                                    Aspect="AspectFit"
+                                    HeightRequest="15"
+                                    Source="ic_stargold"
+                                    WidthRequest="15" />
+                                <Image
+                                    Aspect="AspectFit"
+                                    HeightRequest="15"
+                                    Source="ic_stargold"
+                                    WidthRequest="15" />
+                                <Image
+                                    Aspect="AspectFit"
+                                    HeightRequest="15"
+                                    Source="ic_stargold"
+                                    WidthRequest="15" />
+                                <Image
+                                    Aspect="AspectFit"
+                                    HeightRequest="15"
+                                    Source="ic_starwhite"
+                                    WidthRequest="15" />
+                                <Image
+                                    Aspect="AspectFit"
+                                    HeightRequest="15"
+                                    Source="ic_starwhite"
+                                    WidthRequest="15" />
+                            </StackLayout>
+
+                        </Grid>
+                    </Grid>
+                </pancake:PancakeView>
+                <!--  Find the recipe frame  -->
+                <Frame
+                    Grid.Row="1"
+                    Margin="10,0,10,10"
+                    Padding="5,5"
+                    BackgroundColor="{StaticResource TabsCurrentColor}"
+                    CornerRadius="5"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Frame
+                        Grid.Row="1"
+                        Margin="1"
+                        Padding="0"
+                        BackgroundColor="{StaticResource WhiteColor}"
+                        CornerRadius="5"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
+                        <Frame
+                            Margin="5"
+                            BackgroundColor="{StaticResource TabsCurrentColor}"
+                            CornerRadius="5"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand">
+                            <Grid Padding="5,0" ColumnDefinitions="Auto,*,Auto">
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="50"
+                                    Source="ic_chef"
+                                    WidthRequest="50" />
+                                <StackLayout
+                                    Grid.Column="1"
+                                    Margin="10,0,0,0"
+                                    Orientation="Vertical">
+                                    <Label
+                                        FontSize="Large"
+                                        HorizontalOptions="StartAndExpand"
+                                        LineBreakMode="TailTruncation"
+                                        Style="{StaticResource Label_WhiteRegular}"
+                                        Text="Find the recipes" />
+                                    <Label
+                                        FontSize="Large"
+                                        HorizontalOptions="StartAndExpand"
+                                        LineBreakMode="TailTruncation"
+                                        Style="{StaticResource Label_WhiteRegular}"
+                                        Text="based on what" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="Large"
+                                        HorizontalOptions="StartAndExpand"
+                                        LineBreakMode="TailTruncation"
+                                        Style="{StaticResource Label_WhiteRegular}"
+                                        Text="You Have At Home" />
+                                </StackLayout>
+                                <Image
+                                    Grid.Column="2"
+                                    HeightRequest="50"
+                                    HorizontalOptions="EndAndExpand"
+                                    Source="ic_seemore"
+                                    WidthRequest="50" />
+                                <!--<Frame
+                                    Grid.Column="2"
+                                    Padding="0"
+                                    BackgroundColor="{StaticResource WhiteColor}"
+                                    CornerRadius="16"
+                                    HasShadow="False"
+                                    HeightRequest="32"
+                                    HorizontalOptions="Center"
+                                    IsClippedToBounds="True"
+                                    WidthRequest="32">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="Large"
+                                        HorizontalOptions="Center"
+                                        Text="&gt;"
+                                        TextColor="{StaticResource TabsCurrentColor}"
+                                        VerticalOptions="Center" />
+                                </Frame>-->
+                            </Grid>
+
+                        </Frame>
+                    </Frame>
+                </Frame>
+                <BoxView
+                    Grid.Row="2"
+                    Margin="10,0"
+                    BackgroundColor="{StaticResource DarkGrayColor}"
+                    HeightRequest="1" />
+                <!--  Popular recipes section  -->
+                <Grid
+                    Grid.Row="3"
+                    Margin="10"
+                    RowDefinitions="Auto,Auto"
+                    RowSpacing="0">
+                    <Grid ColumnDefinitions="Auto,*">
+                        <Label
+                            Margin="10,0,0,0"
+                            FontAttributes="Bold"
+                            HorizontalOptions="StartAndExpand"
+                            Style="{StaticResource Label_FSize20_BlackRegular}"
+                            Text="Popular Recipes"
+                            VerticalOptions="Start" />
+                        <Frame
+                            Grid.Column="1"
+                            Padding="10,5"
+                            BorderColor="{StaticResource TabsCurrentColor}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HorizontalOptions="EndAndExpand"
+                            VerticalOptions="Start">
+                            <Label
+                                FontAttributes="Bold"
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource Label_FSize20_TabsCurrentRegular}"
+                                Text="All Recipes"
+                                VerticalOptions="Center" />
+                        </Frame>
+
+                    </Grid>
+                    <ScrollView
+                        Grid.Row="1"
+                        Margin="0,10,0,10"
+                        Padding="10,0,0,0"
+                        HorizontalScrollBarVisibility="Never"
+                        Orientation="Horizontal">
+                        <al:RepeatableStack
+                            Margin="0,5,0,0"
+                            Padding="0,0"
+                            HeightRequest="140"
+                            HorizontalOptions="FillAndExpand"
+                            ItemsSource="{Binding BindingContext.AllRecipes, Source={x:Reference homeview}}"
+                            Orientation="Horizontal"
+                            VerticalOptions="FillAndExpand">
+                            <al:RepeatableStack.ItemTemplate>
+                                <DataTemplate>
+                                    <sh:Shadows
+                                        Margin="5,0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Style="{StaticResource FrameShadowDarkGrayColor}"
+                                        VerticalOptions="FillAndExpand">
+                                        <Frame
+                                            Padding="10"
+                                            BackgroundColor="White"
+                                            BorderColor="LightGray"
+                                            CornerRadius="10"
+                                            HeightRequest="60"
+                                            WidthRequest="120">
+                                            <Grid RowDefinitions="*">
+                                                <Frame
+                                                    Padding="0,0"
+                                                    CornerRadius="10"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="FillAndExpand">
+                                                    <Image
+                                                        Margin="0,0,0,30"
+                                                        Aspect="AspectFill"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        Source="{Binding ItemImage}"
+                                                        VerticalOptions="FillAndExpand" />
+                                                </Frame>
+                                                <Label
+                                                    Grid.Row="0"
+                                                    Margin="0,0,0,0"
+                                                    FontAttributes="Bold"
+                                                    FontSize="15"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    LineBreakMode="TailTruncation"
+                                                    Style="{StaticResource Label_BlackRegular}"
+                                                    Text="{Binding ItemName}"
+                                                    VerticalOptions="EndAndExpand" />
+                                            </Grid>
+                                        </Frame>
+                                    </sh:Shadows>
+                                </DataTemplate>
+                            </al:RepeatableStack.ItemTemplate>
+                        </al:RepeatableStack>
+                    </ScrollView>
+                </Grid>
+                <BoxView
+                    Grid.Row="4"
+                    Margin="10,0"
+                    BackgroundColor="{StaticResource DarkGrayColor}"
+                    HeightRequest="1" />
+                <!--  Suggested Meal plan section  -->
+                <Grid
+                    Grid.Row="5"
+                    Margin="10"
+                    RowDefinitions="Auto,Auto"
+                    RowSpacing="0">
+                    <Grid ColumnDefinitions="Auto,*">
+                        <Label
+                            Margin="10,0,0,0"
+                            FontAttributes="Bold"
+                            HorizontalOptions="StartAndExpand"
+                            Style="{StaticResource Label_FSize20_BlackRegular}"
+                            Text="Suggested Meal Plan"
+                            VerticalOptions="Start" />
+                        <Frame
+                            Grid.Column="1"
+                            Padding="10,5"
+                            BorderColor="{StaticResource TabsCurrentColor}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HorizontalOptions="EndAndExpand"
+                            VerticalOptions="Start">
+                            <Label
+                                FontAttributes="Bold"
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource Label_FSize20_TabsCurrentRegular}"
+                                Text="Meal Planner"
+                                VerticalOptions="Center" />
+                        </Frame>
+
+                    </Grid>
+                    <ScrollView
+                        Grid.Row="1"
+                        Margin="0,10,0,0"
+                        Padding="10,0,0,0"
+                        HorizontalScrollBarVisibility="Never"
+                        Orientation="Horizontal">
+                        <al:RepeatableStack
+                            Margin="0,5,0,0"
+                            Padding="0,0"
+                            HeightRequest="200"
+                            HorizontalOptions="FillAndExpand"
+                            ItemsSource="{Binding BindingContext.AllRecipes, Source={x:Reference homeview}}"
+                            Orientation="Horizontal"
+                            VerticalOptions="FillAndExpand">
+                            <al:RepeatableStack.ItemTemplate>
+                                <DataTemplate>
+
+                                    <Grid Margin="5,10" RowDefinitions="Auto,Auto,Auto">
+                                        <Label
+                                            HorizontalOptions="Center"
+                                            Style="{StaticResource Label_BlackRegular}"
+                                            Text="{Binding Day}"
+                                            VerticalOptions="Center" />
+                                        <Image
+                                            Grid.Row="1"
+                                            HeightRequest="120"
+                                            Source="ic_dottedcircle" />
+                                        <Frame
+                                            Grid.Row="1"
+                                            Padding="0,0"
+                                            BackgroundColor="White"
+                                            CornerRadius="50"
+                                            HasShadow="False"
+                                            HeightRequest="100"
+                                            HorizontalOptions="Center"
+                                            IsClippedToBounds="True"
+                                            VerticalOptions="Center"
+                                            WidthRequest="100">
+                                            <Image
+                                                Aspect="AspectFill"
+                                                HorizontalOptions="FillAndExpand"
+                                                Source="{Binding ItemImage}"
+                                                VerticalOptions="FillAndExpand" />
+                                        </Frame>
+
+                                        <Label
+                                            Grid.Row="2"
+                                            HorizontalOptions="CenterAndExpand"
+                                            Style="{StaticResource Label_BlackRegular}"
+                                            Text="{Binding ItemName}"
+                                            VerticalOptions="Center" />
+                                    </Grid>
+                                </DataTemplate>
+                            </al:RepeatableStack.ItemTemplate>
+                        </al:RepeatableStack>
+                    </ScrollView>
+                </Grid>
+                <BoxView
+                    Grid.Row="6"
+                    Margin="10,0"
+                    BackgroundColor="{StaticResource DarkGrayColor}"
+                    HeightRequest="1" />
+                <!--  Suggested content section  -->
+                <Grid
+                    Grid.Row="7"
+                    Margin="10,10,0,10"
+                    RowDefinitions="Auto,Auto"
+                    RowSpacing="0">
+                    <Grid ColumnDefinitions="Auto,*">
+                        <Label
+                            Margin="10,0,0,0"
+                            FontAttributes="Bold"
+                            HorizontalOptions="StartAndExpand"
+                            Style="{StaticResource Label_FSize20_BlackRegular}"
+                            Text="Suggested Contents"
+                            VerticalOptions="Start" />
+                        <Frame
+                            Grid.Column="1"
+                            Padding="10,5"
+                            BorderColor="{StaticResource TabsCurrentColor}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HorizontalOptions="EndAndExpand"
+                            VerticalOptions="Start">
+                            <Label
+                                FontAttributes="Bold"
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource Label_FSize20_TabsCurrentRegular}"
+                                Text="View all"
+                                VerticalOptions="Center" />
+                        </Frame>
+
+                    </Grid>
+                    <ScrollView
+                        Grid.Row="1"
+                        Margin="0,10,0,10"
+                        Padding="10,0,0,0"
+                        HorizontalScrollBarVisibility="Never"
+                        Orientation="Horizontal">
+                        <al:RepeatableStack
+                            Margin="0,5,0,0"
+                            Padding="0,0"
+                            HeightRequest="140"
+                            HorizontalOptions="FillAndExpand"
+                            ItemsSource="{Binding BindingContext.AllRecipes, Source={x:Reference homeview}}"
+                            Orientation="Horizontal"
+                            VerticalOptions="FillAndExpand">
+                            <al:RepeatableStack.ItemTemplate>
+                                <DataTemplate>
+                                    <sh:Shadows
+                                        Margin="5,0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Style="{StaticResource FrameShadowDarkGrayColor}"
+                                        VerticalOptions="FillAndExpand">
+                                        <Frame
+                                            Padding="0,0,0,0"
+                                            BorderColor="LightGray"
+                                            CornerRadius="10"
+                                            HeightRequest="170"
+                                            WidthRequest="180">
+                                            <Grid RowDefinitions="*,Auto,Auto">
+                                                <Frame
+                                                    Padding="0"
+                                                    CornerRadius="10"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="FillAndExpand">
+                                                    <Image
+                                                        Margin="0,0,0,0"
+                                                        Aspect="AspectFill"
+                                                        HorizontalOptions="FillAndExpand"
+                                                        Source="{Binding ItemImage}"
+                                                        VerticalOptions="FillAndExpand" />
+                                                </Frame>
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Margin="10,0,0,0"
+                                                    FontAttributes="Bold"
+                                                    FontSize="15"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    LineBreakMode="TailTruncation"
+                                                    Style="{StaticResource Label_BlackRegular}"
+                                                    Text="{Binding ItemName}"
+                                                    VerticalOptions="EndAndExpand" />
+                                                <Label
+                                                    Grid.Row="2"
+                                                    Margin="10,0,10,5"
+                                                    FontAttributes="Bold"
+                                                    FontSize="15"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    HorizontalTextAlignment="Start"
+                                                    Style="{StaticResource Label_BlackRegular}"
+                                                    Text="{Binding Title}"
+                                                    TextColor="Gray"
+                                                    VerticalOptions="EndAndExpand" />
+                                            </Grid>
+                                        </Frame>
+                                    </sh:Shadows>
+                                </DataTemplate>
+                            </al:RepeatableStack.ItemTemplate>
+                        </al:RepeatableStack>
+                    </ScrollView>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

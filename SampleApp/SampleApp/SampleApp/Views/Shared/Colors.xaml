@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="SampleApp.Views.Shared.Colors"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Color x:Key="WhiteColor">#FFFFFF</Color>
+    <Color x:Key="BlackTextColor">#313131</Color>
+    <Color x:Key="BlackColor">#000000</Color>
+    <Color x:Key="TabsCurrentColor">#86B800</Color>
+    <Color x:Key="DarkGrayColor">#707070</Color>
+</ResourceDictionary>
